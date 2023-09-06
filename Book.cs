@@ -86,6 +86,14 @@ public class Book
         }
     }
 
+    public List<string> LoadPageNames(string[] files) {
+        List<string> names = new List<string>();
+        for(int i = 0; i < files.Length; i++) {
+            names.Add(files[i].Substring(6, files[i].Length-10));
+        }
+        return names;
+    }
+
     public void Start()
     {
 
@@ -93,7 +101,7 @@ public class Book
         Console.WriteLine(Title);
         Console.ResetColor();
 
-        Book.WriteLine("\nWelcome to your programming notes. " +
+        Console.WriteLine("\nWelcome to your programming notes. " +
         "This program will help you keep track of your notes " +
         "for your programming projects.\n");
 
@@ -103,6 +111,7 @@ public class Book
 
             //Print chapter titles
             PrintPages();
+
 
             Console.WriteLine("\nEnter a chapter title (or 'quit/q/exit' to exit):");
             string input = Console.ReadLine();
