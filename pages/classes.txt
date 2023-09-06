@@ -1,0 +1,8 @@
+Class: A blueprint for creating objects, defining their structure and behavior.
+    Members: Include fields, properties, methods, constructors, and events.
+    Access Modifiers: Control visibility and accessibility (e.g., public, private).
+    Inheritance: Allows a class to inherit properties and behaviors from another class.
+    Encapsulation: Combines data and behavior within a class while controlling access.
+    Abstraction: Hides complex implementation details, exposing only essential features.
+    Static Members: Belong to the class itself rather than instances.
+    Classes are fundamental for organizing code in C#, promoting reusability and maintainability.

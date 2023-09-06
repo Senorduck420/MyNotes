@@ -120,6 +120,9 @@ public class Book
                 continue;
             }
             chapterToRead.Read();
+
+            Console.WriteLine("Press any key to continue");
+            Console.ReadLine();
         }
     }
 }

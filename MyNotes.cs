@@ -15,35 +15,14 @@ public static class MyNotes
         float awesomeLevel = 99.9f;
         bool TooCoolForSchool = false;
     ";
-    public static string loopspage =
+    public static string Loopspage =
     @"
-        for Loop: Used for iterating a specific number of times. It consists of an initialization, condition, and increment/decrement expression.
-        while Loop: Executes a block of code as long as a condition is true.
-        do-while Loop: Similar to a while loop, but it guarantees at least one execution of the code block since the condition is checked after the block execution.
-        foreach Loop: Used to iterate over elements of collections (arrays, lists, etc.) without explicitly using an index.
-        break: Terminates the loop and exits it prematurely.
-        continue: Skips the current iteration and proceeds to the next iteration of the loop.
-        Infinite Loops: Be cautious when writing loops to avoid unintentional infinite loops. Make sure the loop's termination condition is reachable or break out of the loop when needed.
-        Nested Loops: You can nest loops inside each other to perform more complex iterations.
-        Best Practices:
-
-        Use the appropriate loop construct based on the specific requirements of your code.
-        Ensure that the loop control variable is properly initialized, and termination conditions are well-defined.
-        Minimize the scope of loop variables whenever possible to avoid unintentional variable reuse.
-        Loops are fundamental in programming and are used extensively for repetitive tasks and data processing. Understanding how to use them effectively is crucial in C# programming.
+        
     ";
 
-    public static string classespage =
+    public static string Classespage =
         @"
-            Class: A blueprint for creating objects, defining their structure and behavior.
-            Members: Include fields, properties, methods, constructors, and events.
-            Access Modifiers: Control visibility and accessibility (e.g., public, private).
-            Inheritance: Allows a class to inherit properties and behaviors from another class.
-            Encapsulation: Combines data and behavior within a class while controlling access.
-            Abstraction: Hides complex implementation details, exposing only essential features.
-            Polymorphism: Enables treating objects of different classes as if they were of a common base class.
-            Static Members: Belong to the class itself rather than instances.
-            Classes are fundamental for organizing code in C#, promoting reusability and maintainability.
+            
         ";
     
 }
