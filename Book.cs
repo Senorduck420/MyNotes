@@ -1,7 +1,7 @@
 public class Book
 {
     public string Title;
-    public List<Chapter> Chapters;
+    public List<Page> Pages;
     public Book(string title = "Programming notes")
     {
         Console.BackgroundColor = ConsoleColor.Black;
@@ -9,14 +9,14 @@ public class Book
         Chapters = new List<Chapter>();
     }
 
-    public Book(string title, List<Chapter> chapters)
+    public Book(string title, List<Page> pages)
     {
         Console.BackgroundColor = ConsoleColor.Black;
         Title = title;
-        Chapters = chapters;
+        Pages = pages;
     }
 
-    public void PrintChapters()
+    /*public void PrintChapters()
     {
         //Print chapter titles
         Console.WriteLine("\nChapter titles:");
@@ -26,9 +26,21 @@ public class Book
             Console.WriteLine(chapter.Title);
         }
         Console.ResetColor();
+    }*/
+
+    public void PrintPages()
+    {
+        //Print page titles
+        Console.WriteLine("\nPages titles:");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        foreach (Page page in Pages)
+        {
+            Console.WriteLine(page.Title);
+        }
+        Console.ResetColor();
     }
 
-    private Chapter GetChapter(string title)
+    /*private Chapter GetChapter(string title)
     {
         foreach (Chapter chapter in Chapters)
         {
@@ -38,8 +50,19 @@ public class Book
             }
         }
         return null;
-    }
+    }*/
 
+     private Page GetPages(string title)
+    {
+        foreach (Page page in Pages)
+        {
+            if (page.Title == title)
+            {
+                return page;
+            }
+        }
+        return null;
+    }
     public string RecursiveWriteLine(string text)
     {
         if (text.Length == 0)
