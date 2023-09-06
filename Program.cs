@@ -20,6 +20,6 @@ pages.Add(loops);
 pages.Add(classes);*/
 
 List<string> names = lebook.LoadPageNames(files);
-
+lebook.Addpagesnames(files, names, pages);
 
 lebook.Start();

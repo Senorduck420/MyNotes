@@ -94,6 +94,14 @@ public class Book
         return names;
     }
 
+    public void Addpagesnames(string[] files, List<string> names, List<Page> pages) {
+        for (int i = 0; i < files.Length; i++)
+        {
+            pages.Add(new Page(names[i], File.ReadAllText(files[i])));
+            
+        }
+    }
+
     public void Start()
     {
 
@@ -114,7 +122,7 @@ public class Book
 
 
             Console.WriteLine("\nEnter a chapter title (or 'quit/q/exit' to exit):");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine().ToLower();
             if (input.ToLower() == "quit" || input.ToLower() == "q" || input.ToLower() == "exit")
             {
                 break;
