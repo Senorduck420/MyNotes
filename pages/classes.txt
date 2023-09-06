@@ -1,4 +1,4 @@
-Class: A blueprint for creating objects, defining their structure and behavior.
+    Class: A blueprint for creating objects, defining their structure and behavior.
     Members: Include fields, properties, methods, constructors, and events.
     Access Modifiers: Control visibility and accessibility (e.g., public, private).
     Inheritance: Allows a class to inherit properties and behaviors from another class.
