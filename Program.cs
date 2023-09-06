@@ -1,18 +1,9 @@
-﻿Book lebook = new Book();
-List<Chapter> chapters = new List<Chapter>();
-List<Page> variablepages= new List<Page>();
+﻿List<Page> pages = new List<Page>();
 
-Page variablerpage = new Page(MyNotes.VariablesPageOne);
-Page variablerpage2 = new Page(MyNotes.VariablesPageTwo);
-variablepages.Add(variablerpage);
-variablepages.Add(variablerpage2);
+Book lebook = new Book("GUUUHHH", pages);
 
-Chapter variabler =new Chapter("Variabler");
-Chapter data = new Chapter("Datatyper"); 
-chapters.Add(data);
-chapters.Add(variabler);
-
-
+Page variables = new Page("variables", MyNotes.VariablesPageOne);
+pages.Add(variables);
 
 
 lebook.Start();

@@ -1,9 +1,11 @@
 public class Page
 {
     public string Content;
-    public Page(string content)
+    public string Title;
+    public Page(string title, string content)
     {
         Content = content;
+        Title = title;
     }
 
     public void Read()
@@ -11,7 +13,7 @@ public class Page
         Console.Clear();
         Console.WriteLine("\nPage contents:");
         Console.ForegroundColor = ConsoleColor.DarkGreen;
-        Book.WriteLine(Content);
+        Console.WriteLine(Content);
         Console.ResetColor();
     }
 }

@@ -6,7 +6,7 @@ public class Book
     {
         Console.BackgroundColor = ConsoleColor.Black;
         Title = title;
-        Chapters = new List<Chapter>();
+        Pages = new List<Page>();
     }
 
     public Book(string title, List<Page> pages)
@@ -88,19 +88,21 @@ public class Book
 
     public void Start()
     {
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine(Title);
+        Console.ResetColor();
+
+        Book.WriteLine("\nWelcome to your programming notes. " +
+        "This program will help you keep track of your notes " +
+        "for your programming projects.\n");
+
         while (true)
         {
             //Print book title and introduction
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(Title);
-            Console.ResetColor();
-
-            Book.WriteLine("\nWelcome to your programming notes. " +
-                "This program will help you keep track of your notes " +
-                "for your programming projects.\n");
 
             //Print chapter titles
-            PrintChapters();
+            PrintPages();
 
             Console.WriteLine("\nEnter a chapter title (or 'quit/q/exit' to exit):");
             string input = Console.ReadLine();
@@ -108,12 +110,12 @@ public class Book
             {
                 break;
             }
-            Chapter chapterToRead = GetChapter(input);
+            Page chapterToRead = GetPages(input);
             if (chapterToRead == null)
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Chapter not found.\n");
+                Console.WriteLine("Page not found.\n");
                 Console.ResetColor();
                 continue;
             }
