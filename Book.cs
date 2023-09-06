@@ -1,3 +1,5 @@
+using System.Text;
+
 public class Book
 {
     public string Title;
@@ -94,12 +96,28 @@ public class Book
         return names;
     }
 
-    public void Addpagesnames(string[] files, List<string> names, List<Page> pages) {
+    public void Addpagesnames(string[] files, List<string> names) {
         for (int i = 0; i < files.Length; i++)
         {
-            pages.Add(new Page(names[i], File.ReadAllText(files[i])));
-            
+            Pages.Add(new Page(names[i], File.ReadAllText(files[i])));
         }
+    }
+
+    public void WriteFile() {
+        Console.WriteLine("Please enter filename to be created");
+        string fileName = Console.ReadLine().ToLower();
+
+        Console.WriteLine("Enter content to be inserted into file :)");
+        string fileContent = Console.ReadLine();
+
+        string path = @"pages/"+fileName+".txt"; 
+
+        using (FileStream fs = File.Create(path)) {
+                byte[] info = new UTF8Encoding(true).GetBytes(fileContent);
+                fs.Write(info, 0, info.Length);
+        };
+
+        Pages.Add(new Page(fileName, fileContent));
     }
 
     public void Start()
@@ -112,6 +130,21 @@ public class Book
         Console.WriteLine("\nWelcome to your programming notes. " +
         "This program will help you keep track of your notes " +
         "for your programming projects.\n");
+
+        Console.ForegroundColor= ConsoleColor.Magenta;
+        Console.WriteLine("Do you want to enter Write Mode or read pre-existing files?\nWrite/Read");
+        string mode = Console.ReadLine().ToLower();
+
+
+        while (mode == "write") {
+            if (mode == "write") {
+                WriteFile();
+            }
+            Console.WriteLine("Write another?\nY/N");
+            mode = Console.ReadLine().ToLower();
+        }
+
+        Console.ResetColor();
 
         while (true)
         {
